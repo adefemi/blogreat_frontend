@@ -1,9 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+$brandFont: 'Righteous', cursive;
+
 html, body{
   margin: 0;
-  padding: 0
+  padding: 0;
+  font-family: 'Cabin', sans-serif;
 }
 
 .container{
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.search{
+  input{
+    border-radius: 0;
+    border: 1px solid darken(white, 10%);
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+  }
+}
+
+header {
+  .brand{
+    font-family: $brandFont;
+    font-size: 20px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
 }

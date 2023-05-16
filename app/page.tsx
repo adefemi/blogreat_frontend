@@ -1,9 +1,11 @@
-
+import Header from "../components/Header"
 
 export default function Home() {
   return (
-    <div className="container">
+    <main>
+      <Header />
       welcome to blogreat
-    </div>
+      
+    </main>
   )
 }
