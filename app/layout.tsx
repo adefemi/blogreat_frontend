@@ -1,4 +1,4 @@
-import "./style.scss"
+import "../style/style.scss"
 
 export const metadata = {
   title: 'Welcome to Blogreat',
