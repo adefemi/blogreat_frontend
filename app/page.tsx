@@ -1,19 +1,25 @@
-import SpecialCard, { ISpecialBlog } from "@/components/SpecialCard";
-import BlogCard, { IBlog } from "../components/BlogCard";
-import CommentCard, { IComment } from "@/components/commentCard";
-
-const testBlog: IComment = {
-  name: "Adefemigreat",
-  comment:
-    "This blog post provides a concise overview of Djuix.io and its potential benefits for developers. The sectioning and use of images make it easy to read and understand, and the author's analysis of ... ",
-  created_at: "April 05, 2023",
-};
+import Header from "@/components/Header";
+import BlogList from "@/components/Homepage/blogList";
+import SpecialBlog from "@/components/Homepage/specialBlog";
+import TopBlog from "@/components/Homepage/topBlog";
+import TagMenu from "@/components/TagMenu";
 
 export default function Home() {
   return (
     <main>
-      <h1>welcome to blogreat</h1>
-      <CommentCard {...testBlog} />
+      <Header />
+      <TagMenu />
+      <div className="blog-layout">
+        <section>
+          <SpecialBlog />
+        </section>
+        <section>
+          <BlogList />
+        </section>
+        <section>
+          <TopBlog />
+        </section>
+      </div>
     </main>
   );
 }

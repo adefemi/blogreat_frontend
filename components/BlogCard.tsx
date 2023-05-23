@@ -9,11 +9,12 @@ export interface IBlog {
   created_at: string;
   content: string;
   tag: ITag;
+  classname?: string;
 }
 
 const BlogCard = (blog: IBlog) => {
   return (
-    <div className="blogCard">
+    <div className={`blogCard ${blog.classname ? blog.classname : ''}`}>
       <div className="blogContent">
         <div className="top">
           <div className="badge">{blog.tag.name}</div>

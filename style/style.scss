@@ -130,6 +130,20 @@ nav {
     background-size: cover;
     margin-left: 20px;
   }
+
+  &.blog-card-list{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid darken(white, 10%);
+
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+
+  &.top-blog-card{
+    margin-bottom: 40px;
+  }
 }
 
 a {
@@ -209,4 +223,11 @@ a {
     }
     
   }
+}
+
+.blog-layout{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 50px;
 }
