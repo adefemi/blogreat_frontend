@@ -11,12 +11,15 @@ export default function Home() {
       <TagMenu />
       <div className="blog-layout">
         <section>
+          {/* @ts-expect-error Server Component */}
           <SpecialBlog />
         </section>
         <section>
+          {/* @ts-expect-error Server Component */}
           <BlogList />
         </section>
         <section>
+          {/* @ts-expect-error Server Component */}
           <TopBlog />
         </section>
       </div>

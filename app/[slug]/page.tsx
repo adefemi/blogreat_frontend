@@ -46,7 +46,7 @@ const SingleBlog = () => {
             <SingleBlogContent {...blogContent}/>
         </section>
         <section>
-            <SingleBlogComment />
+            <SingleBlogComment slug="" />
         </section>
       </div>
     </div>
