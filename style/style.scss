@@ -23,6 +23,7 @@ body {
     height: 30px;
     padding: 0 10px;
   }
+  position: relative;
 }
 
 header {
@@ -308,5 +309,19 @@ button {
         border: 1px solid darken(white, 20%);
       }
     }
+  }
+}
+
+.dropdown{
+  position: absolute;
+  margin-top: 5px;
+  left: 0;
+  width: 100%;
+  border: 1px solid darken(white, 10%);
+  background-color: white;
+  box-shadow: 0 2px 5px darken(white, 10%);
+
+  &.close{
+    display: none;
   }
 }
