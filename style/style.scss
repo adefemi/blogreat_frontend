@@ -325,3 +325,34 @@ button {
     display: none;
   }
 }
+
+.loader{
+  padding: 20px;
+  svg{
+    animation: rotate 1s infinite;
+    color: #114c6f;
+  }
+}
+
+@keyframes rotate {
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.placeholder, .notFound{
+  padding: 20px;
+  font-size: 14px;
+  color: #414141;
+}
+
+.searchItem{
+  padding: 10px;
+  border-bottom: 1px solid darken(white, 10%);
+  font-size: 14px;
+  color: #0928a4;
+  cursor: pointer;
+  &:last-child{
+    border-bottom: none;
+  }
+}
