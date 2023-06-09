@@ -40,6 +40,7 @@ header {
 
 nav {
   width: 100%;
+  position: relative;
   .tag_items {
     border: 1px solid darken(white, 10%);
     display: flex;
@@ -225,7 +226,7 @@ a {
   margin-bottom: 20px;
   border-bottom: 1px solid darken(white, 10%);
 
-  &:last-child{
+  &:last-child {
     border-bottom: none;
   }
 }
@@ -312,47 +313,68 @@ button {
   }
 }
 
-.dropdown{
+.dropdown {
   position: absolute;
   margin-top: 5px;
   left: 0;
+  top: 100%;
+  z-index: 1;
   width: 100%;
   border: 1px solid darken(white, 10%);
   background-color: white;
   box-shadow: 0 2px 5px darken(white, 10%);
 
-  &.close{
+  &.close {
     display: none;
   }
 }
 
-.loader{
+.loader {
   padding: 20px;
-  svg{
+  svg {
     animation: rotate 1s infinite;
     color: #114c6f;
   }
 }
 
 @keyframes rotate {
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
 
-.placeholder, .notFound{
+.placeholder,
+.notFound {
   padding: 20px;
   font-size: 14px;
   color: #414141;
 }
 
-.searchItem{
+.searchItem {
   padding: 10px;
   border-bottom: 1px solid darken(white, 10%);
   font-size: 14px;
   color: #0928a4;
   cursor: pointer;
-  &:last-child{
+  &:last-child {
     border-bottom: none;
+  }
+}
+
+.tagMenuDropdown {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  .item {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: darken(white, 60%);
+
+    &:hover {
+      background-color: darken(white, 5%);
+      cursor: pointer;
+    }
   }
 }

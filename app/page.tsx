@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <main>
       <Header />
+      {/* @ts-expect-error Server Component */}
       <TagMenu />
       <div className="blog-layout">
         <section>

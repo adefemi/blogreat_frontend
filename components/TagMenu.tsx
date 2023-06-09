@@ -1,4 +1,6 @@
+import { getData } from "@/utils/server";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import TagMenuDropdown from "./TagMenuDropdown";
 
 const tags = [
   "Politics",
@@ -19,7 +21,8 @@ export interface ITag {
     name: string;
 }
 
-const TagMenu = () => {
+const TagMenu = async () => {
+  const tags = await getData<ITag[]>("tag-url") || []
   return (
     <nav>
       <div className="tag_items">
@@ -27,14 +30,12 @@ const TagMenu = () => {
           <div className="day">Sunday</div>
           <div className="date">17 Apr, 2023</div>
         </div>
-        {tags.map((tag, i) => (
+        {tags.slice(0, 10).map((tag, i) => (
           <div className="tag" key={i}>
-            {tag}
+            {tag.name}
           </div>
         ))}
-        <div className="toggle">
-          <HiOutlineDotsHorizontal />
-        </div>
+        <TagMenuDropdown tags={tags} />
       </div>
     </nav>
   );

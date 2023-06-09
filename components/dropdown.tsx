@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react"
 
-const useDropdown = () => {
+const useDropdown = (type:any) => {
     const wrapperRef = useRef<any>()
 
     const getDropdownElement = () => {
-        return document.getElementById("dropDownContainer")
+        return document.getElementById(`dropDownContainer${type}`)
     }
 
     const hasCloseClass = () => {
@@ -35,7 +35,7 @@ const useDropdown = () => {
     }, [])
 
     const getDropdown = (children: React.ReactNode) => {
-        return <div className="dropdown close" id="dropDownContainer">
+        return <div className="dropdown close" id={`dropDownContainer${type}`}>
             {children}
         </div>
     }

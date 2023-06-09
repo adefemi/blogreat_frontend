@@ -55,7 +55,7 @@ const Search = () => {
     }
   }
 
-  const { wrapperRef, setOpen, setClose, getDropdown } = useDropdown();
+  const { wrapperRef, setOpen, setClose, getDropdown } = useDropdown('search');
   return (
     <div className="search" ref={wrapperRef}>
       <input
