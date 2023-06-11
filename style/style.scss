@@ -258,6 +258,14 @@ a {
       margin-bottom: 20px;
     }
 
+    .cover{
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
     h2 {
       max-width: 500px;
       color: darken(white, 80%);
@@ -367,7 +375,7 @@ button {
 
   .item {
     text-align: center;
-    padding: 10px;
+    padding: 20px 0;
     font-size: 14px;
     font-weight: 400;
     color: darken(white, 60%);
@@ -376,5 +384,12 @@ button {
       background-color: darken(white, 5%);
       cursor: pointer;
     }
+  }
+}
+
+.skloading{
+  .title{
+    height: 25px;
+    margin-bottom: 10px;
   }
 }

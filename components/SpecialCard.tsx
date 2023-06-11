@@ -22,7 +22,7 @@ const SpecialCard = (blog: ISpecialBlog) => {
           <p>{blog.caption}</p>
         </div>
 
-        <Link href={""}>Continue Reading...</Link>
+        <Link href={`/${blog.slug}`}>Continue Reading...</Link>
       </div>
 
     </div>

@@ -2,6 +2,7 @@ import { IBlog } from "@/components/BlogCard";
 import Header from "@/components/Header";
 import SingleBlogComment from "@/components/SingleBlogPage/comment";
 import SingleBlogContent from "@/components/SingleBlogPage/content";
+import { getData } from "@/utils/server";
 
 const blogContent: IBlog = {
     title: `Djuix.io can make your development 100% faster -  Adefemigreat`,
@@ -37,7 +38,16 @@ As a developer, you know how critical it is to optimize your workflow and increa
     },
   };
 
-const SingleBlog = () => {
+const SingleBlog = async (props:any) => {
+  const {slug} = props.params
+  const blogContent = await getData<IBlog>(`blog-url/${slug}`)
+
+  if(!blogContent){
+    return <div>
+      The blog is invalid or no longer exist.
+    </div>
+  }
+
   return (
     <div>
       <Header />
@@ -46,7 +56,7 @@ const SingleBlog = () => {
             <SingleBlogContent {...blogContent}/>
         </section>
         <section>
-            <SingleBlogComment slug="" />
+            <SingleBlogComment slug={slug} />
         </section>
       </div>
     </div>
