@@ -17,7 +17,7 @@ const CommentCard = (comment: IComment) => {
       <div className="body">
         <p>
           {comment.comment}
-          <Link href={""}>Read more</Link>
+          {/* <Link href={""}>Read more</Link> */}
         </p>
       </div>
     </div>

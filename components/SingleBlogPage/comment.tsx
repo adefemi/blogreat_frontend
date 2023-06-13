@@ -11,7 +11,7 @@ const SingleBlogComment = ({ slug }: { slug: string }) => {
   const [loading, setLoading] = useState(true);
 
   const getComments = async () => {
-    const comments = (await getData<IComment[]>(`comment-url/${slug}`)) || [];
+    const comments = (await getData<IComment[]>(`comment-url?blog__slug=${slug}`)) || [];
     setComments(comments);
     setLoading(false);
   };
