@@ -10,6 +10,7 @@ export interface IBlog {
   content: string;
   tag: ITag;
   classname?: string;
+  id: string;
 }
 
 const BlogCard = (blog: IBlog) => {

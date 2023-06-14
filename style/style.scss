@@ -393,3 +393,83 @@ button {
     margin-bottom: 10px;
   }
 }
+
+.modalDialog{
+  padding: 0;
+  border: none;
+  background-color: white;
+  box-shadow: 0px 4px 20px 0 rgba(black, 0.1);
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+
+  .close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+  }
+
+  .modalHeading {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-weight: 400;
+      color: rgb(44, 44, 44);
+    }
+
+    border-bottom: 1px solid rgba(44, 44, 44, 10%);
+  }
+
+  .modalFooter {
+    border-top: 1px solid rgba(44, 44, 44, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .modalBody {
+    padding-top: 20px;
+    display: grid;
+    place-content: center;
+  }
+}
+
+dialog::backdrop{
+  backdrop-filter: blur(3px);
+  background-color: rgba(white, 40%);
+}
+
+.input-group {
+  width: 300px;
+  margin-bottom: 20px;
+  position: relative;
+  label {
+    font-size: 14px;
+    color: darken(white, 70%);
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+}
+
+input,
+textarea{
+  border-radius: 4px;
+  border: 1px solid darken(white, 15%);
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+textarea {
+  padding-top: 15px;
+  height: 100px;
+}

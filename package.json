@@ -22,5 +22,6 @@
     "react-loading-skeleton": "^3.3.1",
     "sass": "^1.62.1",
     "typescript": "5.0.4"
-  }
+  },
+  "devDependencies": {}
 }
