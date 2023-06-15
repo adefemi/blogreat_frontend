@@ -1,6 +1,7 @@
 import { getData } from "@/utils/server";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import TagMenuDropdown from "./TagMenuDropdown";
+import Link from "next/link";
 
 const tags = [
   "Politics",
@@ -31,9 +32,9 @@ const TagMenu = async () => {
           <div className="date">17 Apr, 2023</div>
         </div>
         {tags.slice(0, 10).map((tag, i) => (
-          <div className="tag" key={i}>
+          <Link href={`/tag/${tag.name.toLowerCase()}`} className="tag" key={i}>
             {tag.name}
-          </div>
+          </Link>
         ))}
         <TagMenuDropdown tags={tags} />
       </div>

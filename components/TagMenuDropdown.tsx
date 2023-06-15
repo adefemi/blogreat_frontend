@@ -3,6 +3,7 @@
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { ITag } from "./TagMenu";
 import useDropdown from "./dropdown";
+import Link from "next/link";
 
 const TagMenuDropdown = ({ tags }: { tags: ITag[] }) => {
   const { wrapperRef, setOpen, setClose, getDropdown } = useDropdown('tagMenuDrop');
@@ -15,9 +16,9 @@ const TagMenuDropdown = ({ tags }: { tags: ITag[] }) => {
       {getDropdown(
         <div ref={wrapperRef} className="tagMenuDropdown">
           {tags.map((tag, index) => (
-            <div className="item" key={index}>
+            <Link href={`/tag/${tag.name.toLowerCase()}`} className="item" key={index}>
               {tag.name}
-            </div>
+            </Link>
           ))}
         </div>
       )}

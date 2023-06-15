@@ -16,7 +16,6 @@ const SingleBlog = async (props:any) => {
 
   return (
     <div>
-      <Header />
       <div className="singleBlogLayout">
         <section>
             <SingleBlogContent {...blogContent}/>

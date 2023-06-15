@@ -1,27 +1,27 @@
-import BlogList from "@/components/Homepage/blogList";
-import SpecialBlog from "@/components/Homepage/specialBlog";
-import TopBlog from "@/components/Homepage/topBlog";
 import TagMenu from "@/components/TagMenu";
+import BlogList from "@/components/Homepage/blogList";
+import TopBlog from "@/components/Homepage/topBlog";
 
-export default function Home() {
+const BlogByTag = async (props: any) => {
+  const { tag } = props.params;
   return (
     <main>
       {/* @ts-expect-error Server Component */}
       <TagMenu />
-      <div className="blog-layout">
+      <div className="blog-layout tag-layout">
         <section>
           {/* @ts-expect-error Server Component */}
-          <SpecialBlog />
+          <BlogList
+            tag={tag}
+          />
         </section>
         <section>
           {/* @ts-expect-error Server Component */}
-          <BlogList />
-        </section>
-        <section>
-          {/* @ts-expect-error Server Component */}
-          <TopBlog />
+          <TopBlog tag={tag}/>
         </section>
       </div>
     </main>
   );
-}
+};
+
+export default BlogByTag;

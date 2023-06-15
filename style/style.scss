@@ -236,6 +236,11 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 50px;
+
+  &.tag-layout{
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: 10vw;
+  }
 }
 
 .singleBlogLayout {
@@ -472,4 +477,8 @@ textarea{
 textarea {
   padding-top: 15px;
   height: 100px;
+}
+
+.capitalize{
+  text-transform: capitalize;
 }
