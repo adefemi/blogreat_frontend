@@ -1,11 +1,15 @@
+import { formatDate } from "@/utils/function";
 import { IBlog } from "../BlogCard";
+import BackArrow from "../BackArrow";
 
 const SingleBlogContent = (blog: IBlog) => {
+  const {date, month, year} = formatDate(blog.created_at)
   return (
     <div className="single-content">
+      <BackArrow />
       <div className="top">
         <div className="badge">{blog.tag.name}</div>
-        <div className="date">{blog.created_at}</div>
+        <div className="date">{`${month} ${date}, ${year}`}</div>
       </div>
 
       {blog.cover && (

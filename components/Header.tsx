@@ -1,8 +1,9 @@
+import Link from "next/link"
 import Search from "./Search"
 
 const Header = () => {
     return <header>
-        <div className="brand">Blogreat</div>
+        <Link href="/" className="brand">Blogreat</Link>
         <Search />
     </header>
 }

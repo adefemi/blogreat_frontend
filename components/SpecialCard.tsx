@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IBlog } from "./BlogCard";
+import { formatDate } from "@/utils/function";
 
 export interface ISpecialBlog extends IBlog {
   cover: string;
@@ -7,6 +8,7 @@ export interface ISpecialBlog extends IBlog {
 }
 
 const SpecialCard = (blog: ISpecialBlog) => {
+  const {date, month, year} = formatDate(blog.created_at)
   return (
     <div className="specialCard">
       <div
@@ -15,7 +17,7 @@ const SpecialCard = (blog: ISpecialBlog) => {
         />
       <div className="blogContent">
         <div className="top">
-          <div className="date">{blog.created_at}</div>
+          <div className="date">{`${month} ${date}, ${year}`}</div>
         </div>
         <div className="body">
           <h3>{blog.title}</h3>

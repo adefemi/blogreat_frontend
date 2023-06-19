@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ITag } from "./TagMenu";
+import { formatDate } from "@/utils/function";
 
 export interface IBlog {
   title: string;
@@ -14,12 +15,13 @@ export interface IBlog {
 }
 
 const BlogCard = (blog: IBlog) => {
+  const {date, month, year} = formatDate(blog.created_at)
   return (
     <div className={`blogCard ${blog.classname ? blog.classname : ''}`}>
       <div className="blogContent">
         <div className="top">
           <div className="badge">{blog.tag.name}</div>
-          <div className="date">{blog.created_at}</div>
+          <div className="date">{`${month} ${date}, ${year}`}</div>
         </div>
         <div className="body">
           <h3>{blog.title}</h3>

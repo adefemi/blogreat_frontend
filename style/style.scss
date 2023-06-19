@@ -30,6 +30,7 @@ header {
   .brand {
     font-family: $brandFont;
     font-size: 20px;
+    color: rgb(33, 33, 33);
   }
 
   display: flex;
@@ -481,4 +482,16 @@ textarea {
 
 .capitalize{
   text-transform: capitalize;
+}
+
+.backArrow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: darken(white, 10%);
+  cursor: pointer;
+  margin-bottom: 20px;
 }

@@ -1,3 +1,4 @@
+import { formatDate } from "@/utils/function";
 import Link from "next/link";
 
 export interface IComment {
@@ -7,12 +8,13 @@ export interface IComment {
 }
 
 const CommentCard = (comment: IComment) => {
+  const {date, month, year} = formatDate(comment.created_at)
   return (
     <div className="commentCard">
       <div className="top">
         <div className="name">{comment.name}</div>
         <div className="dash"/>
-        <div className="date">{comment.created_at}</div>
+        <div className="date">{`${month} ${date}, ${year}`}</div>
       </div>
       <div className="body">
         <p>
