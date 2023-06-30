@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const baseUrl = "http://blogreat-adefemigreat.api.djuix.io/blog-path/";
+const baseUrl = "https://blogapi.adefemigreat.com/blog-path/";
 
 export const getData = async <T>(endpoint: string): Promise<T | null> => {
   const req = await axios.get(`${baseUrl}${endpoint}`).catch((e) => {
-    console.log(e);
+    // Todo: handle error
   });
   if (req) {
     return req.data as T;
@@ -17,7 +17,7 @@ export const postData = async (
   data: any
 ): Promise<boolean> => {
   const res = await axios.post(`${baseUrl}${endpoint}`, data).catch((e) => {
-    console.log(e);
+    // Todo: handle error
   });
   if (res) {
     return true;
